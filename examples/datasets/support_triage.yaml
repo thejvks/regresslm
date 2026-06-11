@@ -1,0 +1,34 @@
+name: support_triage
+# Golden set for a support-ticket triage system. Each case carries the input
+# text, the reference category, and scorer expectations.
+cases:
+  - id: billing-1
+    input: "I was charged twice for my subscription this month, please refund."
+    reference: billing
+    expect:
+      label: billing
+  - id: billing-2
+    input: "My invoice total looks wrong compared to the plan price."
+    reference: billing
+    expect:
+      label: billing
+  - id: bug-1
+    input: "The export button throws a 500 error every time I click it."
+    reference: bug
+    expect:
+      label: bug
+  - id: bug-2
+    input: "App crashes on startup after the latest update."
+    reference: bug
+    expect:
+      label: bug
+  - id: feature-1
+    input: "Can you add dark mode to the dashboard?"
+    reference: feature_request
+    expect:
+      label: feature_request
+  - id: account-1
+    input: "I can't log in, password reset email never arrives."
+    reference: account
+    expect:
+      label: account

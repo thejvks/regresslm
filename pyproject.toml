@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regresslm"
+version = "0.1.0"
+description = "Regression testing for LLM/agent systems — golden datasets, scorers, CI gate, drift tracking."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.10",
+    "pydantic-settings>=2.7",
+    "PyYAML>=6.0",
+    "SQLAlchemy>=2.0",
+    "typer>=0.15",
+    "rich>=13",
+    "jsonschema>=4.23",
+]
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.42"]
+dev = ["pytest>=8.3"]
+
+[project.scripts]
+regresslm = "regresslm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]

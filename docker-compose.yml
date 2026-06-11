@@ -1,0 +1,9 @@
+services:
+  regresslm:
+    build: .
+    environment:
+      REGRESSLM_MAX_SCORE_DROP: "0.02"
+      REGRESSLM_MAX_NEWLY_FAILING: "0"
+      # ANTHROPIC_API_KEY: required only if you use the real LLMJudge
+    volumes:
+      - ./.regresslm:/app/.regresslm   # persist run history for gating/drift

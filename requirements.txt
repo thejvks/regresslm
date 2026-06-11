@@ -1,0 +1,13 @@
+pydantic==2.10.4
+pydantic-settings==2.7.1
+PyYAML==6.0.2
+SQLAlchemy==2.0.36
+typer==0.15.1
+rich==13.9.4
+jsonschema==4.23.0
+
+# optional: real LLM judge
+anthropic==0.42.0
+
+# dev / test
+pytest==8.3.4
